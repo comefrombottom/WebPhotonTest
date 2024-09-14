@@ -115,7 +115,7 @@ void Main()
 				client.connect(playerName.text, U"jp");
 			}
 
-			font(U"v1").draw(620, 550);
+			font(U"v0.2").draw(620, 550);
 		}
 
 		if (client.isInLobby())
