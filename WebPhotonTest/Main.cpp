@@ -16,7 +16,7 @@ class MyClient : public Multiplayer_Photon
 public:
 	MyClient()
 	{
-		init(std::string(SIV3D_OBFUSCATE(PHOTON_APP_ID)), U"1.0", Verbose::No);
+		init(std::string(SIV3D_OBFUSCATE(PHOTON_APP_ID)), U"1.0", Verbose::No, ConnectionProtocol::Wss);
 
 		RegisterEventCallback(EventCode::sendWord, &MyClient::eventReceived_sendWord);
 		RegisterEventCallback(EventCode::sendResult, &MyClient::eventReceived_sendResult);
@@ -114,6 +114,8 @@ void Main()
 			{
 				client.connect(playerName.text, U"jp");
 			}
+
+			font(U"v1").draw(620, 550);
 		}
 
 		if (client.isInLobby())
